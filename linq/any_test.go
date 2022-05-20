@@ -159,3 +159,83 @@ func Test_Any_String(t *testing.T) {
 		})
 	}
 }
+
+func Test_Any_Struct(t *testing.T) {
+	type someObject struct {
+		id int
+	}
+	testCases := []struct {
+		name string
+		s    []someObject
+		want bool
+	}{
+		{
+			name: "Int, Empty Slice, Returns False",
+			s:    make([]someObject, 0),
+			want: false,
+		},
+		{
+			name: "Int, No Valid Items, Returns False",
+			s: []someObject{
+				{1},
+				{2},
+				{3},
+			},
+			want: false,
+		},
+		{
+			name: "Int, Valid Item at Start, Returns True",
+			s: []someObject{
+				{0},
+				{1},
+				{2},
+				{3},
+			},
+			want: true,
+		},
+		{
+			name: "Int, Valid Item at End, Returns True",
+			s: []someObject{
+				{1},
+				{2},
+				{3},
+				{0},
+			},
+			want: true,
+		},
+		{
+			name: "Int, Valid Item in Middle, Returns True",
+			s: []someObject{
+				{1},
+				{2},
+				{0},
+				{3},
+				{4},
+			},
+			want: true,
+		},
+		{
+			name: "Int, Multiple Valid Items, Returns True",
+			s: []someObject{
+				{1},
+				{0},
+				{2},
+				{0},
+				{3},
+			},
+			want: true,
+		},
+	}
+
+	f := func(n someObject) bool {
+		return n.id == 0
+	}
+
+	for _, testCase := range testCases {
+		t.Run(testCase.name, func(t *testing.T) {
+			a := linq.Any(testCase.s, f)
+
+			assert.Equal(t, testCase.want, a)
+		})
+	}
+}
