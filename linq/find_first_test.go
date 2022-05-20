@@ -77,7 +77,7 @@ func Test_FindFirst_Float(t *testing.T) {
 		want *float64
 	}{
 		{
-			name: "Int, No Matching Item, Returns Nil",
+			name: "Float, No Matching Item, Returns Nil",
 			s: []float64{
 				1.0, 2.0, 3.0,
 			},
@@ -87,7 +87,7 @@ func Test_FindFirst_Float(t *testing.T) {
 			want: nil,
 		},
 		{
-			name: "Int, Starts With Matching Item, Returns First Item",
+			name: "Float, Starts With Matching Item, Returns First Item",
 			s: []float64{
 				1.0, 2.0, 3.0,
 			},
@@ -97,7 +97,7 @@ func Test_FindFirst_Float(t *testing.T) {
 			want: GetPointer(1.0),
 		},
 		{
-			name: "Int, First Matching Item is Last, Returns Last Item",
+			name: "Float, First Matching Item is Last, Returns Last Item",
 			s: []float64{
 				1.0, 2.0, 3.0,
 			},
@@ -107,7 +107,7 @@ func Test_FindFirst_Float(t *testing.T) {
 			want: GetPointer(3.0),
 		},
 		{
-			name: "Int, Multiple Matching Items, Returns First",
+			name: "Float, Multiple Matching Items, Returns First",
 			s: []float64{
 				1.0, 2.0, 3.0, 4.0, 5.0, 6.0,
 			},
@@ -135,7 +135,7 @@ func Test_FindFirst_String(t *testing.T) {
 		want *string
 	}{
 		{
-			name: "Int, No Matching Item, Returns Nil",
+			name: "String, No Matching Item, Returns Nil",
 			s: []string{
 				"a", "b", "c",
 			},
@@ -145,7 +145,7 @@ func Test_FindFirst_String(t *testing.T) {
 			want: nil,
 		},
 		{
-			name: "Int, Starts With Matching Item, Returns First Item",
+			name: "String, Starts With Matching Item, Returns First Item",
 			s: []string{
 				"a", "b", "c",
 			},
@@ -155,7 +155,7 @@ func Test_FindFirst_String(t *testing.T) {
 			want: GetPointer("a"),
 		},
 		{
-			name: "Int, First Matching Item is Last, Returns Last Item",
+			name: "String, First Matching Item is Last, Returns Last Item",
 			s: []string{
 				"a", "b", "c",
 			},
@@ -165,7 +165,7 @@ func Test_FindFirst_String(t *testing.T) {
 			want: GetPointer("c"),
 		},
 		{
-			name: "Int, Multiple Matching Items, Returns First",
+			name: "String, Multiple Matching Items, Returns First",
 			s: []string{
 				"a", "b", "c", "d", "e", "f",
 			},
@@ -197,7 +197,7 @@ func Test_FindFirst_Struct(t *testing.T) {
 		want *someObject
 	}{
 		{
-			name: "Int, No Matching Item, Returns Nil",
+			name: "Struct, No Matching Item, Returns Nil",
 			s: []someObject{
 				{1},
 				{2},
@@ -209,7 +209,7 @@ func Test_FindFirst_Struct(t *testing.T) {
 			want: nil,
 		},
 		{
-			name: "Int, Starts With Matching Item, Returns First Item",
+			name: "Struct, Starts With Matching Item, Returns First Item",
 			s: []someObject{
 				{1},
 				{2},
@@ -221,7 +221,7 @@ func Test_FindFirst_Struct(t *testing.T) {
 			want: GetPointer(someObject{1}),
 		},
 		{
-			name: "Int, First Matching Item is Last, Returns Last Item",
+			name: "Struct, First Matching Item is Last, Returns Last Item",
 			s: []someObject{
 				{1},
 				{2},
@@ -233,7 +233,7 @@ func Test_FindFirst_Struct(t *testing.T) {
 			want: GetPointer(someObject{3}),
 		},
 		{
-			name: "Int, Multiple Matching Items, Returns First",
+			name: "Struct, Multiple Matching Items, Returns First",
 			s: []someObject{
 				{1},
 				{2},
