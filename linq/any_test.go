@@ -19,27 +19,27 @@ func Test_Any_Int(t *testing.T) {
 			want: false,
 		},
 		{
-			name: "Int, No Valid Items, Returns False",
+			name: "Int, No Matching Items, Returns False",
 			s:    []int{1, 2, 3},
 			want: false,
 		},
 		{
-			name: "Int, Valid Item at Start, Returns True",
+			name: "Int, Matching Item at Start, Returns True",
 			s:    []int{0, 1, 2, 3},
 			want: true,
 		},
 		{
-			name: "Int, Valid Item at End, Returns True",
+			name: "Int, Matching Item at End, Returns True",
 			s:    []int{1, 2, 3, 0},
 			want: true,
 		},
 		{
-			name: "Int, Valid Item in Middle, Returns True",
+			name: "Int, Matching Item in Middle, Returns True",
 			s:    []int{1, 2, 0, 3, 4},
 			want: true,
 		},
 		{
-			name: "Int, Multiple Valid Items, Returns True",
+			name: "Int, Multiple Matching Items, Returns True",
 			s:    []int{1, 0, 2, 0, 3},
 			want: true,
 		},
@@ -70,27 +70,27 @@ func Test_Any_Float64(t *testing.T) {
 			want: false,
 		},
 		{
-			name: "Int, No Valid Items, Returns False",
+			name: "Int, No Matching Items, Returns False",
 			s:    []float64{1.0, 2.0, 3.0},
 			want: false,
 		},
 		{
-			name: "Int, Valid Item at Start, Returns True",
+			name: "Int, Matching Item at Start, Returns True",
 			s:    []float64{0.0, 1.0, 2.0, 3.0},
 			want: true,
 		},
 		{
-			name: "Int, Valid Item at End, Returns True",
+			name: "Int, Matching Item at End, Returns True",
 			s:    []float64{1.0, 2.0, 3.0, 0.0},
 			want: true,
 		},
 		{
-			name: "Int, Valid Item in Middle, Returns True",
+			name: "Int, Matching Item in Middle, Returns True",
 			s:    []float64{1.0, 2.0, 0.0, 3.0, 4.0},
 			want: true,
 		},
 		{
-			name: "Int, Multiple Valid Items, Returns True",
+			name: "Int, Multiple Matching Items, Returns True",
 			s:    []float64{1.0, 0.0, 2.0, 0.0, 3.0},
 			want: true,
 		},
@@ -121,27 +121,27 @@ func Test_Any_String(t *testing.T) {
 			want: false,
 		},
 		{
-			name: "Int, No Valid Items, Returns False",
+			name: "Int, No Matching Items, Returns False",
 			s:    []string{"a", "b", "c"},
 			want: false,
 		},
 		{
-			name: "Int, Valid Item at Start, Returns True",
+			name: "Int, Matching Item at Start, Returns True",
 			s:    []string{"", "a", "b", "c"},
 			want: true,
 		},
 		{
-			name: "Int, Valid Item at End, Returns True",
+			name: "Int, Matching Item at End, Returns True",
 			s:    []string{"a", "b", "c", ""},
 			want: true,
 		},
 		{
-			name: "Int, Valid Item in Middle, Returns True",
+			name: "Int, Matching Item in Middle, Returns True",
 			s:    []string{"a", "b", "", "c", "d"},
 			want: true,
 		},
 		{
-			name: "Int, Multiple Valid Items, Returns True",
+			name: "Int, Matching Valid Items, Returns True",
 			s:    []string{"a", "", "b", "", "c"},
 			want: true,
 		},
@@ -175,7 +175,7 @@ func Test_Any_Struct(t *testing.T) {
 			want: false,
 		},
 		{
-			name: "Int, No Valid Items, Returns False",
+			name: "Int, No Matching Items, Returns False",
 			s: []someObject{
 				{1},
 				{2},
@@ -184,7 +184,7 @@ func Test_Any_Struct(t *testing.T) {
 			want: false,
 		},
 		{
-			name: "Int, Valid Item at Start, Returns True",
+			name: "Int, Matching Item at Start, Returns True",
 			s: []someObject{
 				{0},
 				{1},
@@ -194,7 +194,7 @@ func Test_Any_Struct(t *testing.T) {
 			want: true,
 		},
 		{
-			name: "Int, Valid Item at End, Returns True",
+			name: "Int, Matching Item at End, Returns True",
 			s: []someObject{
 				{1},
 				{2},
@@ -204,7 +204,7 @@ func Test_Any_Struct(t *testing.T) {
 			want: true,
 		},
 		{
-			name: "Int, Valid Item in Middle, Returns True",
+			name: "Int, Matching Item in Middle, Returns True",
 			s: []someObject{
 				{1},
 				{2},
@@ -215,7 +215,7 @@ func Test_Any_Struct(t *testing.T) {
 			want: true,
 		},
 		{
-			name: "Int, Multiple Valid Items, Returns True",
+			name: "Int, Multiple Matching Items, Returns True",
 			s: []someObject{
 				{1},
 				{0},
