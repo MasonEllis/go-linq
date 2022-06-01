@@ -1,4 +1,4 @@
-module go-linq
+module github.com/MasonEllis/go-linq
 
 go 1.18
 
