@@ -1,9 +1,9 @@
 package linq_test
 
 import (
-	"go-linq/linq"
 	"testing"
 
+	"github.com/MasonEllis/go-linq/linq"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -84,12 +84,12 @@ func Test_Sum_Complex(t *testing.T) {
 		},
 		{
 			name:        "Complex, Slice With One Element, Returns Element",
-			s:           []complex128{ 5 + 2i },
+			s:           []complex128{5 + 2i},
 			expectedSum: 5 + 2i,
 		},
 		{
 			name:        "Complex, Slice With Many Element, Returns Correct Sum",
-			s:           []complex128{ 1 + 2i, 3 + 4i, 5 + 6i},
+			s:           []complex128{1 + 2i, 3 + 4i, 5 + 6i},
 			expectedSum: 9 + 12i,
 		},
 	}

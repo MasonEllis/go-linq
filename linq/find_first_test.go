@@ -1,9 +1,9 @@
 package linq_test
 
 import (
-	"go-linq/linq"
 	"testing"
 
+	"github.com/MasonEllis/go-linq/linq"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -54,7 +54,7 @@ func Test_FindFirst_Int(t *testing.T) {
 				1, 2, 3, 4, 5, 6,
 			},
 			f: func(n int) bool {
-				return n % 2 == 0
+				return n%2 == 0
 			},
 			want: GetPointer(2),
 		},

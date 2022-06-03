@@ -1,9 +1,9 @@
 package linq_test
 
 import (
-	"go-linq/linq"
 	"testing"
 
+	"github.com/MasonEllis/go-linq/linq"
 	"github.com/stretchr/testify/assert"
 )
 
